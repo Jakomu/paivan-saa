@@ -1,4 +1,20 @@
-# Getting Started with Create React App
+# Weather App
+
+Check weather in your city!
+
+## How to use
+
+1. Add `.env-file` into project's root holding your OpenWeatherMap.org API key in the file in format:
+   `REACT_APP_API_KEY=[yourAPIkey]`
+
+2. `npm install`
+
+3. `npm start`
+
+Right now the app has Oulu's and Helsinki's weather info. If you want to add more cities, you can do so by adding their coordinates in the "locations"-array found in `src/App.tsx`. Format is:
+`{[cityName]: {[lat: "[latCoordinate]", lng: "[lngCoordinate]"}}`
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

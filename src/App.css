@@ -1,3 +1,49 @@
 .App {
   text-align: center;
+  font-size: 1.3rem;
+}
+
+#appName {
+  margin: 4rem 0rem 5rem 0rem;
+}
+
+.weatherCard {
+  box-sizing: border-box;
+  border-style: solid;
+  margin: 2rem;
+  border-radius: 10px;
+  box-shadow: 3px 5px 5px 1px rgba(0, 0, 0, 0.5);
+  max-width: 500px;
+  margin: auto;
+}
+
+.weatherCard img {
+  border-style: groove;
+  border-color: rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+
+.weatherCard span {
+  font-weight: bolder;
+  font-size: 150%;
+}
+
+.weatherCard h3 {
+  margin-top: 0px;
+}
+
+.home a:link,
+a:visited {
+  text-decoration: none;
+  color: black;
+  padding: 1rem 2rem;
+  font-size: 1.8rem;
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+  margin: 1rem;
+}
+
+.home h1 {
+  padding: 1rem;
 }
