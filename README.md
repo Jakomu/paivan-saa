@@ -14,6 +14,9 @@ Check weather in your city!
 Right now the app has Oulu's and Helsinki's weather info. If you want to add more cities, you can do so by adding their coordinates in the "locations"-array found in `src/App.tsx`. Format is:
 `{[cityName]: {[lat: "[latCoordinate]", lng: "[lngCoordinate]"}}`
 
+Then add Link-component to `src/components/Home.tsx`. Format is:
+`<Link to="/weather/:[YOURCITY]">[YOURCITY]]</Link>`
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -11,6 +11,7 @@ const WeatherCard = ({ locations }: WeatherCardProps) => {
   const cityString = city[cityKey]?.slice(1);
 
   useEffect(() => {
+    //gets weatherinfo from openweathermap.org
     const getWeatherInfo = () => {
       const cityCoords: City | undefined = locations.find(
         (place) => Object.keys(place)[0] === cityString
@@ -23,7 +24,6 @@ const WeatherCard = ({ locations }: WeatherCardProps) => {
         )
           .then((res) => {
             res.data.time = Date.now();
-            console.log(res.data);
             setWeatherData(res.data);
             localStorage.setItem(cityString, JSON.stringify(res.data));
           })
@@ -33,19 +33,17 @@ const WeatherCard = ({ locations }: WeatherCardProps) => {
       }
     };
 
+    // checks if the data is older thant 10 minutes and either gets new data, or uses old one
     if (localStorage.getItem(cityString || "")) {
       const data: string = localStorage.getItem(cityString || "") || "";
       const parsedData = JSON.parse(data);
       if (parsedData.time + 600000 < Date.now()) {
         getWeatherInfo();
-        console.log("oli vanhaa, haettiin uus");
       } else {
         setWeatherData(parsedData);
-        console.log("localesta");
       }
     } else {
       getWeatherInfo();
-      console.log("netistä");
     }
   }, []);
 
